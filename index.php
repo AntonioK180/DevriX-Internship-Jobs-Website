@@ -24,6 +24,6 @@
 </head>
 <body>
   <p>Hello, DevriX</p>
-  <a href="create_job.php"> Create a new offer </a>
+  <a href="create_job.html"> Create a new offer </a>
 </body>
 </html>
