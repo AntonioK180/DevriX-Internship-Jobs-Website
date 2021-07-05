@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>PHP Application</title>
+    <title>Home</title>
     <?php
       include("test.php")
     ?>
