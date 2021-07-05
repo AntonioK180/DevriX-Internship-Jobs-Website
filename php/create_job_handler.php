@@ -19,5 +19,5 @@
   CloseCon($connection);
 
 
-  echo '<a href="index.php">Return to home page</a>';
+  echo '<a href="/DevriX-Internship-Jobs-Website/index.php">Return to home page</a>';
 ?>
