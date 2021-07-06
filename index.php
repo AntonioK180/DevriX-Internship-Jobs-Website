@@ -15,7 +15,7 @@
 		<header class="site-header">
 			<h1 class="site-title"><a href="#">Job Offers</a></h1>
     </header>
-    <a href="./php/create_job.php"> Create a new offer </a>
+    <a href="./php/create_job.php" id="new_offer"> Create a new offer </a>
 
     <?php
     include 'php/db_connection.php';
@@ -24,7 +24,6 @@
 
 		session_start();
     $connection = OpenCon();
-    echo "Connected Successfully" ."<br>";
 
     $sql = "select * from joboffers";
     $result = $connection->query($sql);

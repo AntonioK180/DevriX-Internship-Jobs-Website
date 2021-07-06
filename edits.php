@@ -23,7 +23,6 @@
 
 		session_start();
 		$connection = OpenCon();
-		echo "Connected Successfully" ."<br>";
 
 		$sql = "select * from joboffers";
 		$result = $connection->query($sql);

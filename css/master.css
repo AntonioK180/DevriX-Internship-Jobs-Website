@@ -539,4 +539,14 @@ a {
   }
 }
 
+#new_offer {
+  display: block;
+  border: 2px solid black;
+  width: 40%;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 26px;
+  border-radius: 15px;
+}
+
 /* # sourceMappingURL=master.css.map */

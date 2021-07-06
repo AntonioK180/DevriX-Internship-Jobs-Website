@@ -3,6 +3,10 @@
 <head>
     <title>Edit a Job Offer</title>
 
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/master.css">
+  	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
     <?php
       include 'db_connection.php';
 
@@ -50,13 +54,10 @@
             echo "Invalid salary!";
           }
         }
-
     ?>
 
 </head>
 <body>
-  <p>You are going to fill in this form.</p>
-
   <form action="" method="post">
     <?php
       echo '<label>Job Title: </label> <input type="text" name="job_title" value="' .$data['title'] .'"><br>';
@@ -64,8 +65,7 @@
       echo '<label>Salary: </label> <input type="number" name="salary" value="' .$data['salary'] .'"><br>';
       echo '<label>Description: </label> <input type="text" name="description" value="' .$data['description'] .'"><br>';
     ?>
-
-  <input type="submit" name="submit_btn">
+  <input type="submit" name="submit_btn" value="Submit">
 </form>
 
 </body>

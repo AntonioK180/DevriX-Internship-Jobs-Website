@@ -26,3 +26,4 @@ A repository for my internship at DevriX. It is a small project for creating a w
 5. Open the XAMPP Control Panel and start __Apache__ and __MySQL__ modules.
 6. Copy the contents of the db_config.sql file and execute them in a MySQL Console.
 7. Open a browser of your choice and type in the search bar: 'localhost/DevriX-Internship-Jobs-Website/'.
+8. If you want to use the admin features, you will need to manually go to the 'localhost/DevriX-Internship-Jobs-Website/register.php' and register an admin user.
