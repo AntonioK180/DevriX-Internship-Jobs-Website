@@ -3,6 +3,9 @@
 <head>
     <title>Create a Job Offer</title>
 
+    <link rel="stylesheet" href="../css/forms.css">
+  	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
     <?php
       include 'db_connection.php';
 
@@ -35,16 +38,16 @@
 
 </head>
 <body>
-  <p>You are going to fill in this form.</p>
+  <div class="form" id="create_job_form">
+    <form action="" method="post">
+      <label>Job Title: </label> <input type="text" name="job_title"><br>
+      <label>Company Name: </label><input type="text" name="company_name"><br>
+      <label>Salary: </label><input type="text" name="salary"><br>
+      <label>Description: </label><input type="text" name="description"><br>
 
-  <form action="" method="post">
-  <label>Job Title: </label> <input type="text" name="job_title"><br>
-  <label>Company Name: </label><input type="text" name="company_name"><br>
-  <label>Salary: </label><input type="text" name="salary"><br>
-  <label>Description: </label><input type="text" name="description"><br>
-
-  <input type="submit" name="submit_btn">
-</form>
+      <input type="submit" name="submit_btn" value="Create Offer">
+    </form>
+  </div>
 
 </body>
 </html>

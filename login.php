@@ -3,6 +3,10 @@
 <head>
     <title>Log in as Admin</title>
 
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/master.css">
+  	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
     <?php
       include "php/db_connection.php";
 
@@ -48,7 +52,6 @@
         echo '<a href="./logout.php">LogOut</a>,';
       }
     ?>
-    <a href="./single_offer.php">Single</a>,
     <a href="./login.php">LogIn</a>
   </p>
 </footer>

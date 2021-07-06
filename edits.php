@@ -53,7 +53,6 @@
 						echo '<a href="./php/logout.php">LogOut</a>, ';
 					}
 				?>
-				<a href="./single_offer.php">Single</a>,
 				<a href="./login.php">LogIn</a>
 			</p>
 		</footer>
