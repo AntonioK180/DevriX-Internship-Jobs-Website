@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="job-edit">
-        <a href="./php/edit_job_handler.php?job_id=%d">Edit</a>
+        <a href="./php/edit_job.php?job_id=%d">Edit</a>
         <a href="./php/delete_job_handler.php?job_id=%d">Delete</a>
       </div>
     </li>

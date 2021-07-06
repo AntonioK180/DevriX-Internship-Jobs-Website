@@ -27,22 +27,26 @@
 
 
         if(isset($_REQUEST['submit_btn'])){
-          $job_title = $_POST['job_title'];
-          $company_name = $_POST['company_name'];
-          $salary = $_POST['salary'];
-          $description = $_POST['description'];
+          $job_title = filter_var(mysqli_real_escape_string($connection, $_POST['job_title']), FILTER_SANITIZE_STRING);         // mysqli_real_escape_string makes the string safe for the SQL query to execute; filter_var makes the input safe for the browser
+          $company_name = filter_var(mysqli_real_escape_string($connection, $_POST['company_name']), FILTER_SANITIZE_STRING);
+          $salary = mysqli_real_escape_string($connection, $_POST['salary']);
+          $description = filter_var(mysqli_real_escape_string($connection, $_POST['description']), FILTER_SANITIZE_STRING);
 
-          $sql_update = "UPDATE joboffers SET title='$job_title', company='$company_name', salary='$salary', description='$description' WHERE id='$id'";
-          if ($connection->query($sql_update) === TRUE) {
-            echo "Successfully updated an existing record. <br>";
+          if((!filter_var($salary, FILTER_VALIDATE_INT) === false)){
+            $sql_update = "UPDATE joboffers SET title='$job_title', company='$company_name', salary='$salary', description='$description' WHERE id='$id'";
+            if ($connection->query($sql_update) === TRUE) {
+              echo "Successfully updated an existing record. <br>";
+            } else {
+              echo "Error: " . $sql_update . "<br>" . $connection->error;
+            }
+            CloseCon($connection);
+
+            header('Location: ' .'/DevriX-Internship-Jobs-Website/edits.php', true, 303);
+            die();
+
           } else {
-            echo "Error: " . $sql_update . "<br>" . $connection->error;
+            echo "Invalid salary!";
           }
-
-          CloseCon($connection);
-
-          header('Location: ' . '/DevriX-Internship-Jobs-Website/edits.php', true, 303);
-          die();
         }
 
     ?>

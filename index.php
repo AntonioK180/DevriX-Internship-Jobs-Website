@@ -15,13 +15,14 @@
 		<header class="site-header">
 			<h1 class="site-title"><a href="#">Job Offers</a></h1>
     </header>
-    <a href="create_job.html"> Create a new offer </a>
+    <a href="./php/create_job.php"> Create a new offer </a>
 
     <?php
     include 'php/db_connection.php';
 		include 'php/parsing_functions.php';
 
 
+		session_start();
     $connection = OpenCon();
     echo "Connected Successfully" ."<br>";
 
@@ -47,9 +48,15 @@
 
 		<footer class="site-footer">
 			<p>Copyright 2020 | Developer links:
-				<a href="./edits.php">Edits</a>,
 				<a href="./index.php">Home</a>,
-				<a href="./single_offer.php">Single</a>
+				<?php
+					if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+						echo '<a href="./edits.php">Edits</a>, ';
+						echo '<a href="./php/logout.php">LogOut</a>, ';
+					}
+				?>
+				<a href="./single_offer.php">Single</a>,
+				<a href="./login.php">LogIn</a>
 			</p>
 		</footer>
 	</div>
