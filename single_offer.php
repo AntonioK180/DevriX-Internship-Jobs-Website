@@ -9,6 +9,32 @@
 
 	<link rel="stylesheet" href="css/master.css">
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+	<?php
+	include 'php/db_connection.php';
+
+
+	$connection = OpenCon();
+
+	if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+				 $url = "https://";
+		else
+				 $url = "http://";
+
+		$url.= $_SERVER['HTTP_HOST'];
+
+		$url.= $_SERVER['REQUEST_URI'];
+
+		$url_components = parse_url($url);
+		parse_str($url_components['query'], $params);
+		$id = $params['job_id'];
+
+		$sql_select = "SELECT * FROM joboffers WHERE id = '$id'";
+		$result = $connection->query($sql_select);
+		$data = $result->fetch_assoc();
+
+	?>
+
 </head>
 <body>
 	<div class="site-wrapper">
@@ -21,9 +47,9 @@
 				<div class="job-card">
 					<div class="job-primary">
 						<header class="job-header">
-							<h2 class="job-title"><a href="#">Front End Developer</a></h2>
+							<?php echo '<h2 class="job-title"><a href="#">' .$data['title'] .'</a></h2>' ?>
 							<div class="job-meta">
-								<a class="meta-company" href="#">Company Awesome Ltd.</a>
+								<?php echo '<a class="meta-company" href="#">' .$data['company'] .'</a>' ?>
 								<span class="meta-date">Posted 14 days ago</span>
 							</div>
 							<div class="job-details">
@@ -33,10 +59,8 @@
 						</header>
 
 						<div class="job-body">
-							<p>Our band of superheroes are looking for a self-driven, highly organised individual who will join the team in creating our most important products.</p>
-							<p>Location is unimportant, as long as you are available, enthusiastic, committed, passionate, and know your stuff.</p>
-							<p>For this role, we need a superhero who will take on the challenges of working in one of the leading WordPress companies, enhancing our website, products, and services, backed by a quality team of pros.</p>
-
+							<h3>Descirption </h3>
+							<?php echo '<p>' .$data['description'] .'</p>' ?>
 							<h3>Responsibilities</h3>
 							<p>You’ll be part of a development team working on our flagship products. It’s going to be epic!</p>
 						</div>

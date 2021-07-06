@@ -2,9 +2,9 @@
   function indexPageOffersParser($id, $job_title, $company_name){
     $html_string = '
     <ul class="jobs-listing">
-      <li class="job-card" id="%d">
+      <li class="job-card">
         <div class="job-primary">
-          <h2 class="job-title"><a href="#">%s</a></h2>
+          <h2 class="job-title"><a href="./single_offer.php?job_id=%d">%s</a></h2>
           <div class="job-meta">
             <a class="meta-company" href="#">%s</a>
             <span class="meta-date">Posted 14 days ago</span>

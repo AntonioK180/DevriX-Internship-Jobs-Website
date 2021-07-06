@@ -5,6 +5,8 @@
 
     <?php
       include 'db_connection.php';
+
+
       $connection = OpenCon();
 
       if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
