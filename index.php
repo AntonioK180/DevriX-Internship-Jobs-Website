@@ -21,7 +21,7 @@
     include 'php/db_connection.php';
 		include 'php/parsing_functions.php';
 
-		
+
     $connection = OpenCon();
     echo "Connected Successfully" ."<br>";
 

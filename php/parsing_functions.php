@@ -38,13 +38,13 @@
         </div>
       </div>
       <div class="job-edit" id="%d">
-        <a href="#">Edit</a>
+        <a href="./php/edit_job_handler.php?job_id=%d">Edit</a>
         <a href="#">Delete</a>
       </div>
     </li>
     ';
 
-    return sprintf($html_string, $job_title, $company_name, $id);
+    return sprintf($html_string, $job_title, $company_name, $id, $id);
   }
 
 ?>
