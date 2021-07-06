@@ -41,7 +41,7 @@
 
           CloseCon($connection);
 
-          header('Location: ' . '/DevriX-Internship-Jobs-Website', true, 303);
+          header('Location: ' . '/DevriX-Internship-Jobs-Website/edits.php', true, 303);
           die();
         }
 

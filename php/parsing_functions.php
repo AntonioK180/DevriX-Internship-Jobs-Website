@@ -37,9 +37,9 @@
           <span class="meta-date">Posted 14 days ago</span>
         </div>
       </div>
-      <div class="job-edit" id="%d">
+      <div class="job-edit">
         <a href="./php/edit_job_handler.php?job_id=%d">Edit</a>
-        <a href="#">Delete</a>
+        <a href="./php/delete_job_handler.php?job_id=%d">Delete</a>
       </div>
     </li>
     ';
