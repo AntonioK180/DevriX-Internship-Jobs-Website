@@ -27,7 +27,13 @@
   }
 
 
-  function editsPageOffersParser($job_title, $company_name, $id){
+  function editsPageOffersParser($job_title, $company_name, $id, $is_active){
+    if($is_active){
+      $activity = "ACTIVE";
+    } else {
+      $activity = "INACTIVE";
+    }
+
     $html_string = '
     <li class="job-card">
       <div class="job-primary">
@@ -35,16 +41,18 @@
         <div class="job-meta">
           <a class="meta-company" href="#">%s</a>
           <span class="meta-date">Posted 14 days ago</span>
+          <p name="activity">%s</p>
         </div>
       </div>
       <div class="job-edit">
         <a href="./php/edit_job.php?job_id=%d">Edit</a>
         <a href="./php/delete_job_handler.php?job_id=%d">Delete</a>
+        <a href="./php/change_offer_status.php?job_id=%d">Toggle</a>
       </div>
     </li>
     ';
 
-    return sprintf($html_string, $job_title, $company_name, $id, $id);
+    return sprintf($html_string, $job_title, $company_name, $activity, $id, $id, $id);
   }
 
 ?>

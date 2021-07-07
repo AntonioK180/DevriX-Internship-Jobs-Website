@@ -21,9 +21,6 @@
 			<input type="submit" name="submit_btn" value="Search">
 		</form>
 
-		<form action="" method="post">
-			<button type="submit" name="clear_btn">Clear Keyword</button>
-		</form>
 
     <?php
     include 'php/db_connection.php';
@@ -44,9 +41,16 @@
 		}
 
 		if(isset($_GET['keyword'])){
+			echo '
+			<form action="" method="post">
+			<button type="submit" name="clear_btn">Clear Keyword</button>
+			</form>
+			';
+
 	    $keyword =  filter_var(mysqli_real_escape_string($connection, $_GET['keyword']), FILTER_SANITIZE_STRING);
 
-			$sql_keyword = "SELECT * FROM joboffers WHERE description LIKE '%" .$keyword ."%' OR title LIKE '%" .$keyword ."%'";
+
+			$sql_keyword = "SELECT * FROM joboffers WHERE activated AND description LIKE '%" .$keyword ."%' OR title LIKE '%" .$keyword ."%'";
 			if($result_keyword = $connection->query($sql_keyword)){
 				if($result_keyword->num_rows > 0){
 					while($row = $result_keyword->fetch_assoc()){
@@ -61,7 +65,7 @@
 				}
 			}
 		} else {
-			$sql = "select * from joboffers";
+			$sql = "SELECT * FROM joboffers WHERE activated";
 			if($result = $connection->query($sql)){
 				if($result->num_rows > 0){
 					while($row = $result->fetch_assoc()){

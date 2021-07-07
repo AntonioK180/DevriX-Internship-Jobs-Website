@@ -32,8 +32,9 @@
 				$job_title = $row['title'];
 				$company_name = $row['company'];
 				$id = $row['id'];
+				$is_active = $row['activated'];
 
-				echo editsPageOffersParser($job_title, $company_name, $id);
+				echo editsPageOffersParser($job_title, $company_name, $id, $is_active);
 
 			}
 		} else {
