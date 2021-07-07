@@ -10,7 +10,7 @@
     <?php
       include "php/db_connection.php";
 
-
+      session_start();
       $connection = OpenCon();
 
       if(isset($_REQUEST['submit_btn'])){
@@ -27,11 +27,13 @@
 </head>
 <body>
   <form action="" method="post">
-  <label>Username: </label><input type="text" name="username"><br>
-  <label>Password: </label><input type="password" name="password"><br>
+    <label>Username: </label><input type="text" name="username"><br>
+    <label>Password: </label><input type="password" name="password"><br>
 
-  <input type="submit" name="submit_btn" value="Register a new Admin">
-</form>
+    <input type="submit" name="submit_btn" value="Register a new Admin">
+  </form>
+
+<?php include "php/footer.php" ?>
 
 </body>
 </html>
