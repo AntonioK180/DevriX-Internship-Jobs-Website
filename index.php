@@ -21,6 +21,7 @@
 			<input type="submit" name="submit_btn" value="Search">
 		</form>
 
+		<a href="paginated_offers.php?from_offer=28">Paginated Offers</a
 
     <?php
     include 'php/db_connection.php';
@@ -29,6 +30,7 @@
 
 		session_start();
     $connection = OpenCon();
+
 
 
 		if(isset($_REQUEST['submit_btn'])){
