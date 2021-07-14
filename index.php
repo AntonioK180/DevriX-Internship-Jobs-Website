@@ -21,7 +21,6 @@
 			<input type="submit" name="submit_btn" value="Search">
 		</form>
 
-		<a href="paginated_offers.php?from_offer=28">Paginated Offers</a
 
     <?php
     include 'php/db_connection.php';
@@ -32,7 +31,18 @@
     $connection = OpenCon();
 
 
+		$sql_id = "SELECT id FROM joboffers LIMIT 1";
+		$result = $connection->query($sql_id);
+		$row = $result->fetch_assoc();
+		$paginated_id = $row['id'];
+		echo $paginated_id;
 
+
+		?>
+
+			<a href="paginated_offers.php?from_offer=<?php echo --$paginated_id; ?>">Paginated Offers</a>
+
+		<?php
 		if(isset($_REQUEST['submit_btn'])){
 			$keyword =  filter_var(mysqli_real_escape_string($connection, $_POST['keyword']), FILTER_SANITIZE_STRING);
 			header('Location: ' .'/DevriX-Internship-Jobs-Website/index.php?keyword=' .$keyword, true, 303);
